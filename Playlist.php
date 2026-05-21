@@ -1,10 +1,11 @@
 <?php
 
-class Playlist {
-    private array $midias = [];
+declare(strict_types=1);
 
-    
-    public function adicionar($midia): void {
+class Playlist {
+    public function __construct(private array $midias = []) {}
+
+    public function adicionar(Reproduzivel $midia): void {
         $this->midias[] = $midia;
     }
 
