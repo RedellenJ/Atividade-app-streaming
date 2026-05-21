@@ -2,5 +2,5 @@
 
 interface Reproduzivel
 {
-    public function reproduzir(): string;;;
+    public function reproduzir(): string;
 }
