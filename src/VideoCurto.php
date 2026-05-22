@@ -13,7 +13,7 @@ final class VideoCurto extends Midia
         private string $nome,
         private string $plataforma
     ) {
-        parent::__construct($tipoMidia, $duracao, $quantidadeReproducao, $nome, $plataforma);
+        parent::__construct($nome, $criador, (int) $duracao);
     }
 
     public function reproduzir(): string

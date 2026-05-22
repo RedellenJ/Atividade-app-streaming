@@ -14,7 +14,7 @@ final class Podcast extends Midia
         private string $nome,
         private string $plataforma
     ) {
-        parent::__construct($tipoMidia, $duracao, $quantidadeReproducao, $nome, $plataforma);
+        parent::__construct($nome, $this->criador, (int) $duracao);
     }
 
     public function reproduzir(): string
