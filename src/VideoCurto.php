@@ -5,13 +5,15 @@ declare(strict_types=1);
 final class VideoCurto extends Midia
 {
     public function __construct(
-        string $titulo,
         string $criador,
-        int $duracaoSegundos,
-        private string $plataforma,
-        private bool $vertical
+        private bool $vertical,
+        private string $tipoMidia,
+        private float $duracao,
+        private int $quantidadeReproducao,
+        private string $nome,
+        private string $plataforma
     ) {
-        parent::__construct($titulo, $criador, $duracaoSegundos);
+        parent::__construct($tipoMidia, $duracao, $quantidadeReproducao, $nome, $plataforma);
     }
 
     public function reproduzir(): string

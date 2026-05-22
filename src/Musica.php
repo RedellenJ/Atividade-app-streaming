@@ -5,13 +5,16 @@ declare(strict_types=1);
 final class Musica extends Midia
 {
     public function __construct(
-        string $titulo,
         string $artista,
-        int $duracaoSegundos,
         private string $album,
-        private string $genero
+        private string $genero,
+        private string $tipoMidia,
+        private float $duracao,
+        private int $quantidadeReproducao,
+        private string $nome,
+        private string $plataforma
     ) {
-        parent::__construct($titulo, $artista, $duracaoSegundos);
+        parent::__construct($tipoMidia, $duracao, $quantidadeReproducao, $nome, $plataforma);
     }
 
     public function reproduzir(): string
