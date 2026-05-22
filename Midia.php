@@ -2,62 +2,39 @@
 
 declare(strict_types=1);
 
-abstract class Midia{
-
-    public function __construct(private string $tipoMidia, private float $duracao, private int $quantidadeReproducao, 
-                                private string $nome, private string $plataforma){
+abstract class Midia implements Reproduzivel
+{
+    public function __construct(
+        private string $titulo,
+        private string $criador,
+        private int $duracaoSegundos
+    ) {
     }
 
-    public function getTipoMidia(): string
+    public function getTitulo(): string
     {
-        return $this->tipoMidia;
+        return $this->titulo;
     }
 
-    public function setTipoMidia(string $tipoMidia): void
+    public function getCriador(): string
     {
-        $this->tipoMidia = $tipoMidia;
-    } 
-
-    public function getDuracao(): float
-    {
-        return $this->duracao;
+        return $this->criador;
     }
 
-    public function setDuracao(float $duracao): void
+    public function getDuracaoSegundos(): int
     {
-        $this->duracao = $duracao;
+        return $this->duracaoSegundos;
     }
 
-    public function getQuantidadeReproducao(): int
+    protected function detalhesBasicos(): string
     {
-        return $this->quantidadeReproducao;
-    }
-
-    public function setQuantidadeReproducao(int $quantidadeReproducao): void
-    {
-        $this->quantidadeReproducao = $quantidadeReproducao;
-    }
-
-    public function getNome(): string
-    {
-        return $this->nome;
-    }
-
-    public function setNome(string $nome): void
-    {
-        $this->nome = $nome;
-    }
-
-    public function getPlataforma(): string
-    {
-        return $this->plataforma;
-    }
-
-    public function setPlataforma(string $plataforma): void
-    {
-        $this->plataforma = $plataforma;
+        return sprintf(
+            '%s - %s (%ds)',
+            $this->titulo,
+            $this->criador,
+            $this->duracaoSegundos
+        );
     }
 
     abstract public function reproduzir(): string;
-
 }

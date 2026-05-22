@@ -11,7 +11,7 @@ class Playlist {
 
     public function reproduzirTudo(): void {
         foreach ($this->midias as $midia) {
-            echo $midia->reproduzir() . "<br>";
+            echo $midia->reproduzir() . PHP_EOL;
         }
     }
 }
